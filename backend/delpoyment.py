@@ -4,14 +4,14 @@ from .settings import BASE_DIR
 
 ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['*']
 SECRET_KEY = os.environ.get('SECRET_KEY')
+
+DEBUG = False
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'OPTIONS': {
-            'options': '-c search_path=development'
-        },
         'NAME': os.environ.get('DB_NAME'), 
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
@@ -21,4 +21,4 @@ DATABASES = {
 }
 
 
-DEBUG = False
+
